@@ -40,7 +40,7 @@ async function listAll(prefix) {
   const blobs = [];
   let cursor;
   do {
-    const res = await list({ prefix, cursor, limit: 1000, token });
+    const res = await list({ prefix, cursor, limit: 1000 });
     blobs.push(...res.blobs);
     cursor = res.hasMore ? res.cursor : undefined;
   } while (cursor);
@@ -48,7 +48,7 @@ async function listAll(prefix) {
 }
 
 async function download(pathname) {
-  const res = await get(pathname, { access, token });
+  const res = await get(pathname, { access });
   if (!res || res.statusCode !== 200) throw new Error("Could not read " + pathname);
   return Buffer.from(await new Response(res.stream).arrayBuffer());
 }

@@ -1,0 +1,17 @@
+{
+  "name": "soc606-short-drama-study",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Online survey and experiment on short drama use and mental health (jsPsych 7, deployed on Vercel).",
+  "scripts": {
+    "dev": "vercel dev",
+    "download": "node scripts/download-data.mjs"
+  },
+  "dependencies": {
+    "@vercel/blob": "^2.9.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

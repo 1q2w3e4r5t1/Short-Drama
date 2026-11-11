@@ -24,9 +24,10 @@ function loadEnvFile(file) {
 loadEnvFile(".env.local");
 loadEnvFile(".env");
 
-const token = process.env.BLOB_READ_WRITE_TOKEN;
-if (!token) {
-  console.error("BLOB_READ_WRITE_TOKEN not found. Run `vercel env pull .env.local` first.");
+if (!process.env.BLOB_STORE_ID && !process.env.BLOB_READ_WRITE_TOKEN) {
+  console.error(
+    "No Blob credentials found. Connect the Blob store to the Development environment, then run `vercel env pull .env.local`."
+  );
   process.exit(1);
 }
 const access = process.env.BLOB_ACCESS || "private";

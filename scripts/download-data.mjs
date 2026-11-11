@@ -1,7 +1,7 @@
 // ============================================================
 // Download all study data from Vercel Blob and build CSV files.
 // Usage (in the project folder):
-//   1) vercel env pull .env.local     (gets BLOB_READ_WRITE_TOKEN)
+//   1) vercel env pull .env.local  
 //   2) npm run download
 // Output (in ./data):
 //   raw/<session_id>.json     furthest saved stage for each session
